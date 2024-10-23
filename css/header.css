@@ -1,0 +1,30 @@
+/* Ensure header background and text color */
+header {
+  background-color: black; /* Black background for the header */
+  color: white; /* Default text color */
+  border-radius: 0 0 0 250px;
+  border-bottom: 1px solid #ffffff;
+}
+
+.nav-link {
+  color: white !important; /* Override Bootstrap's default link color */
+  position: relative;
+  transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out; /* Smooth transition for color changes */
+}
+
+.nav-link:hover {
+  color: transparent !important; /* Make the text transparent on hover */
+  background: linear-gradient(
+    45deg,
+    #f8139c,
+    #ff7a00
+  ); /* Gradient background */
+  -webkit-background-clip: text; /* Clip background to text */
+  background-clip: text; /* Clip background to text */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth hover effect */
+}
+
+/* For a smooth transition */
+.nav-link:hover {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}

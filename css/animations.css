@@ -1,0 +1,13 @@
+/* Keyframes and Animations */
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-30px); }
+    100% { transform: translateY(0); }
+}
+
+@keyframes line1 {
+    0%, 100% { width: 0; }
+    33% { width: 50%; }
+}
+
+/* Other keyframes for animations */

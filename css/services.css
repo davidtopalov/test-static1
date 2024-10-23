@@ -1,0 +1,112 @@
+/* SERVICES SECTION */
+
+.service_section {
+  margin-top: 10rem;
+  text-align: center;
+  background: #000000;
+}
+
+.service_section .heading_container {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: none;
+}
+
+.service_section .service_container {
+  background-color: none;
+}
+
+.service_section .row {
+  margin: 0;
+}
+
+.service_section .box {
+  min-height: 50vh;
+  max-height: 50vh;
+  margin: 20px;
+  padding: 15px;
+  border-radius: 25px;
+  /* border-radius: 50px 0 50px 0; */
+  /* border: 1px solid #ffffff; */
+  /* background-color: #ffffff; */
+  background-color: none;
+  /* -webkit-box-shadow: 0 0 5px 0 rgba(255, 255, 255, 0.25);
+  box-shadow: 0 0 5px 0 rgba(255, 254, 254, 0.342); */
+  position: relative;
+  overflow: hidden;
+  -webkit-transition: transform 0.5s ease, box-shadow 0.5s ease;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.service_section .box::before {
+  content: "";
+  width: 275px;
+  height: 275px;
+  position: absolute;
+  right: -137.5px;
+  bottom: -137.5px;
+  background-color: #ffffff;
+  z-index: -1;
+  border-radius: 100%;
+  -webkit-transition: all 1.5s;
+  transition: all 1.5s;
+}
+
+.service_section .box .img-box img {
+  width: 75px;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+  -webkit-filter: invert(1);
+  filter: invert(1);
+}
+
+.service_section .box .detail-box {
+  margin-top: 15px;
+  color: #ffffff;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+
+.service_section .box .detail-box h5 {
+  font-weight: bold;
+  position: relative;
+}
+
+.service_section .box:hover::before {
+  -webkit-transform: scale(5);
+  transform: scale(5);
+  background: linear-gradient(160deg, #e6128781 5%, #e66f0080);
+}
+
+.service_section .box:hover {
+  -webkit-transform: translateY(-30px);
+  transform: translateY(-30px);
+  -webkit-box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+  border: none;
+}
+
+/* Updated Read More button styling */
+.services-btn-read-more {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #ffffff;
+  background: #000000;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: large;
+  position: relative;
+  overflow: hidden;
+  box-shadow: none;
+  outline: none;
+  border: none;
+}
+
+/* Hover effect with gradient */
+.services-btn-read-more:hover {
+  border: 1px solid #ffffff;
+  color: #ffffff;
+}

@@ -1,0 +1,69 @@
+/* ABOUT US SECTION */
+
+.about_section {
+  position: relative;
+  padding: 5rem 0;
+  background: #000000;
+  color: #ffffff;
+  text-align: center;
+  overflow: hidden;
+}
+
+.about_section h1 {
+  position: relative;
+  z-index: 3; /* Higher than .about_image */
+}
+
+.about_image {
+  position: absolute;
+  top: 40%;
+  right: 5%;
+  width: 50%;
+  height: 100%;
+  z-index: 1; /* Lower than h1 */
+  background-image: url("../assets/background-images/pexels-bertellifotografia-1830252.jpg");
+  background-repeat: no-repeat;
+  /* background-position: center; */
+  background-position: 30% 40%; /* Adjust these values as needed */
+  background-size: cover;
+  border-radius: 0 0 500px 0;
+  clip-path: polygon(20% 0%, 100% 0, 100% 100%, 0 100%);
+
+  /* clip-path: polygon(28% 80%, 0 19%, 100% 51%); */
+  /* border-radius: 50%; */
+  /* transition: transform 0.3s ease, opacity 0.3s ease; */
+  overflow: hidden;
+}
+
+/* Mask layer with shadow */
+.about_image::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #0000005b;
+
+  box-shadow: 0 0 500px 10px #000000 inset;
+  border-radius: inherit; /* Match the shape of .about_image */
+  z-index: 1; /* Ensure it’s layered above the image */
+}
+
+.about_section .about_container {
+  position: relative;
+  max-width: 100%;
+  z-index: 2;
+  margin: 0 auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.about_section .about-detail-box {
+  padding: 5rem;
+  color: #ffffff;
+  position: relative;
+  z-index: 3;
+  background: linear-gradient(25deg, #e61287b4, #00000000 50%);
+  border-radius: 100px 0 0 0;
+}

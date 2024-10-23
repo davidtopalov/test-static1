@@ -1,0 +1,50 @@
+/* VALUES SECTION */
+.values {
+  perspective: 1000px; /* Adds depth perspective to the section */
+  padding: 50px 0;
+  background-color: #000000; /* Dark background to make the values stand out */
+  color: #ffffff;
+}
+
+.values-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.values-wrapper {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px; /* Adds space between values */
+  transform-style: preserve-3d; /* Enables 3D positioning of child elements */
+}
+
+.value-box {
+  position: relative;
+  font-size: 1.5rem;
+  padding: 10px 20px;
+  background: #662ae4; /* Neon background for values */
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(102, 42, 228, 0.5); /* Neon glow */
+  transition: transform 0.8s ease, opacity 0.8s ease;
+  transform: translateZ(
+    var(--z-depth)
+  ); /* Position values at different Z depths */
+  z-index: calc(
+    1 - var(--z-depth)
+  ); /* Ensure elements with higher z-depth are above */
+}
+
+/* Hover effect to make each value pop forward */
+.value-box:hover {
+  transform: translateZ(200px) scale(1.1); /* Bring the value closer on hover */
+  opacity: 1;
+}
+
+/* Style for the Values title */
+.values h1 {
+  color: #fff;
+  margin-bottom: 20px;
+}

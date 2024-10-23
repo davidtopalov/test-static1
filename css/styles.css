@@ -1,0 +1,697 @@
+/* Ensure header background and text color */
+header {
+    background-color: black; /* Black background for the header */
+    color: white; /* Default text color */
+}
+
+.nav-link {
+    color: white !important; /* Override Bootstrap's default link color */
+    position: relative;
+    transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out; /* Smooth transition for color changes */
+}
+
+.nav-link:hover {
+    color: transparent !important; /* Make the text transparent on hover */
+    background: linear-gradient(45deg, #F8139C, #FF7A00); /* Gradient background */
+    -webkit-background-clip: text; /* Clip background to text */
+    background-clip: text; /* Clip background to text */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth hover effect */
+}
+
+/* For a smooth transition */
+.nav-link:hover {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+
+
+/* Hero Section */
+#hero {
+    position: relative;
+    overflow: hidden;
+    height: 85vh; /* Ensures the hero section covers the full viewport height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff;
+    z-index: 0; /* Ensure background stays behind content */
+}
+
+/* Background Curve */
+#hero:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%; /* Makes sure the curve covers enough area */
+    height: 100%;
+    background: linear-gradient(135deg, #000000 60%, #662AE4); /* Gradient background from black to #662AE4 */
+
+    border-bottom-right-radius: 100%; /* Heavy radius at the bottom-right corner */
+    
+    z-index: -1; /* Ensure the curve stays behind the content */
+}
+
+/* Floating Animation */
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-30px); /* Adjust the float distance as needed */
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Apply Floating Animation to the Image */
+.hero-image {
+    animation: float 4s ease-in-out infinite; /* Floating animation */
+    position: relative; /* Required for z-index to work */
+    z-index: 1; /* Ensure image is above everything */
+}
+
+/* Container within Hero Section */
+.container {
+    position: relative;
+    z-index: 2; /* Ensure text content is on top */
+    color: white; /* Ensure text color is white for readability */
+}
+
+/* Responsive Text Alignment */
+.text-md-start {
+    text-align: left;
+}
+
+/* Custom Button Styles */
+.btn-custom {
+    background: linear-gradient(45deg, #F8139C, #FF7A00); /* Gradient background */
+    color: #FFFFFF; /* Text color */
+    border: none; /* Remove border */
+    border-radius: 30px; /* Rounded corners */
+    font-size: 16px; /* Adjust font size as needed */
+    padding: 15px 30px; /* Adjust padding as needed */
+    text-transform: uppercase; /* Uppercase text */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.btn-custom:hover {
+    background: linear-gradient(45deg, #e61288, #e66e00); /* Darker gradient shade for hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
+    transform: scaleX(1.05); /* Enlarge button width on hover */
+}
+
+
+
+/* General Choose Us section styles */
+#chooseus {
+    padding: 60px 0;
+    background-color: #f8f9fa;
+}
+
+#chooseus .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Card Styles */
+.card {
+    background-color: #fff;
+    border: none;
+    margin-bottom: 30px;
+    position: relative;
+    height: 300px;  /* Adjust the height as needed */
+    transition: transform 0.3s ease;
+    border-radius: 12px;
+    animation: hover-effect 3.6s infinite; /* Added animation to trigger hover effect */
+}
+
+.card-body {
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    z-index: 2; /* Ensures the content stays above the pseudo-element */
+}
+
+.card-title {
+    margin-bottom: 15px;
+}
+
+
+/* Line 1: Bottom-left to bottom-right */
+.card .outline-1 {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background-color: #ffffff00; /* Neon color */
+    border-radius: 12px;
+    z-index: 1;
+    transition: width 2s ease;
+    animation: line1 4s infinite 1s; /* Added animation for the first line */
+        box-shadow: 0 0 5px #662AE4, 0 0 10px #662AE4, 0 0 10px #e61288; /* Glow effect */
+
+}
+
+@keyframes line1 {
+    0%, 100% { width: 0; }
+    33% { width: 50%; }
+}
+
+/* Line 2: Bottom-left to top-left */
+.card .outline-2 {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 0;
+    width: 3px;
+   background-color: #ffffff00; /* Neon color */
+    border-radius: 12px;
+    z-index: 1;
+    transition: height 2s ease;
+    animation: line2 3s infinite 2s; /* Added animation for the second line */
+            box-shadow: 0 0 5px #ff9d0080, 0 0 10px #ff9d0080, 0 0 10px #ff9d0080; /* Glow effect */
+}
+
+@keyframes line2 {
+    0%, 100% { height: 0; }
+    33% { height: 50%; }
+}
+
+/* Line 3: Bottom-right to top-right */
+.card .outline-3 {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 0;
+    width: 3px;
+    background-color: #ffffff00; /* Neon color */
+    border-radius: 12px;
+    z-index: 1;
+    transition: height 2s ease;
+    animation: line3 4s infinite 4s; /* Added animation for the third line */
+            box-shadow: 0 0 5px #ff9d0080, 0 0 10px #ff9d0080, 0 0 10px #ff9d0080; /* Glow effect */
+}
+
+@keyframes line3 {
+    0%, 100% { height: 0; }
+    33% { height: 50%; }
+}
+
+/* Line 4: Top-left to top-right */
+.card .outline-4 {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 3px;
+    background-color: #ffffff00; /* Neon color */
+    border-radius: 12px;
+    z-index: 1;
+    transition: width 2s ease;
+    animation: line4 8s infinite 3s; /* Added animation for the fourth line */
+            box-shadow: 0 0 5px #ff9d0080, 0 0 10px #ff9d0080, 0 0 10px #ff9d0080; /* Glow effect */
+}
+
+@keyframes line4 {
+    0%, 100% { width: 0; }
+    33% { width: 50%; }
+}
+
+
+
+/* Line 5: Bottom-right to bottom-left */
+.card .outline-5 {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 0;
+    height: 3px;
+    background-color: #ffffff00; /* Neon color */
+    border-radius: 12px;
+    z-index: 1;
+    transition: width 2s ease;
+    animation: line5 5s infinite 3s; /* Added animation for the first line */
+        box-shadow: 0 0 5px #ff9d0080, 0 0 10px #ff9d0080, 0 0 10px #ff9d0080; /* Glow effect */
+
+}
+
+@keyframes line5 {
+    0%, 100% { width: 0; }
+    33% { width: 50%; }
+}
+
+/*Line 6: Top-left to bottom-left */
+
+.card .outline-6 {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 0;
+    width: 3px;
+   background-color: #ffffff00; /* Neon color */
+    border-radius: 12px;
+    z-index: 1;
+    transition: height 2s ease;
+    animation: line6 4s infinite 6s; /* Added animation for the second line */
+            box-shadow: 0 0 5px #ff9d0080, 0 0 10px #ff9d0080, 0 0 10px #ff9d0080; /* Glow effect */
+}
+
+@keyframes line6 {
+    0%, 100% { height: 0; }
+    33% { height: 50%; }
+}
+
+
+
+/* Line 7: Bottom-right to top-right */
+.card .outline-7 {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 0;
+    width: 3px;
+   background-color: #ffffff00; /* Neon color */
+    border-radius: 12px;
+    z-index: 1;
+    transition: height 2s ease;
+    animation: line7 5s infinite 4s; /* Added animation for the second line */
+            box-shadow: 0 0 5px #ff9d0080, 0 0 10px #ff9d0080, 0 0 10px #ff9d0080; /* Glow effect */
+}
+
+@keyframes line7 {
+    0%, 100% { height: 0; }
+    33% { height: 50%; }
+}
+
+
+/* Hover effect animation (continuous) */
+@keyframes hover-effect {
+    0%, 100% { transform: none; }
+}
+
+
+/* SERVICES SECTION */
+
+
+.service_section {
+  text-align: center;
+}
+
+
+.service_section .heading_container {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.service_section .box {
+  min-height: 50vh;
+  max-height: 50vh;
+  margin: 25px;
+  padding: 15px;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25);
+          box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25);
+  position: relative;
+  overflow: hidden;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.service_section .box::before {
+  content: "";
+  width: 275px;
+  height: 275px;
+  position: absolute;
+  right: -137.5px;
+  bottom: -137.5px;
+  background-color: #ffffff;
+  z-index: -1;
+  border-radius: 100%;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.service_section .box .img-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 125px;
+  border-radius: 15px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.service_section .box .img-box img {
+  width: 75px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.service_section .box .detail-box {
+  margin-top: 15px;
+}
+
+.service_section .box .detail-box h5 {
+  font-weight: bold;
+  position: relative;
+}
+
+.service_section .box .detail-box a {
+  color: inherit;
+}
+
+.service_section .box:hover {
+  color: #ffffff;
+}
+
+.service_section .box:hover::before {
+  -webkit-transform: scale(5);
+          transform: scale(5);
+  background-color: #662AE4;
+}
+
+.service_section .box:hover img {
+  -webkit-filter: invert(1);
+          filter: invert(1);
+}
+
+.service_section .btn-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 45px;
+}
+
+.service_section .btn-box a {
+  display: inline-block;
+  padding: 10px 45px;
+  background-color: #662AE4;
+  color: #ffffff;
+  border-radius: 5px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  border: 1px solid #662AE4;
+}
+
+.service_section .btn-box a:hover {
+  color: #ffffff;
+  -webkit-transform: translateY(-3px);
+          transform: translateY(-3px);
+}
+
+
+
+
+
+
+/* TECHNOLOGIES */
+/* General Section Styles */
+#technologies {
+    position: relative;
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+    padding-top: 5vh; /* Remove extra padding around the section */
+    color: #000000;
+    overflow: hidden;
+    background: #ffffff; /* Background color for visibility */
+}
+
+#technologies .container {
+    width: 100vw;
+    max-width: 100%; /* Ensure full width */
+    margin-left: 5vh; /* Offset the left padding */
+    padding-right: 0; /* Remove right padding */
+    padding-left: 5vh; /* Add padding to maintain spacing */
+    margin-right: 0; /* Remove right margin */
+    margin-bottom: 5vh;
+}
+
+/* Category List Column Styles */
+.col-md-6 {
+    padding: 0; /* Remove padding from the column */
+}
+
+
+
+/* Category List Styles */
+#category-list {
+    display: grid;
+    position: relative;
+    grid-template-columns: repeat(3, 1fr); /* Create a grid with 3 columns */
+    grid-gap: 15px; /* No spacing between cells */
+    width: 100%;
+    padding: 0; /* Remove padding around the list */
+    margin: 0; /* Remove margins */
+    list-style: none; /* Remove default list styling */
+    
+}
+
+#category-list .list-group-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 150px; /* Set height of each cell */
+    background: #ffffff; /* Background color for list items */
+    border-top-left-radius: 100px; /* Rounded corners for each item */
+    border-bottom-left-radius: 5px; /* Rounded corners for each item */
+    border-top-right-radius: 5px; /* Rounded corners for each item */
+    color: #000000;
+    border: 2px solid; /* Border around each item */
+    border-color: #000000;
+    margin: 0; /* Remove bottom margin */
+    text-align: center; /* Center align text */
+    font-size: 1.2em; /* Increase font size */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for hover effects */
+    position: relative; /* Required for pseudo-elements */
+    overflow: hidden;
+      -webkit-box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25);
+          box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25);
+}
+
+
+
+/* Active Category */
+.active-category {
+    font-weight: bold,; /* Make active category text bold */
+    border-top-left-radius: 100px; /* Rounded corners for each item */
+    border-bottom-left-radius: 5px; /* Rounded corners for each item */
+    border-top-right-radius: 5px; /* Rounded corners for each item */
+    
+}
+
+
+/* Apply line effect to active category */
+#category-list .list-group-item.active-category::before,
+#category-list .list-group-item.active-category:hover::before {
+    height: 100%; /* Expand the vertical line to the top */
+    
+}
+
+#category-list .list-group-item.active-category::after,
+#category-list .list-group-item.active-category:hover::after {
+    width: 100%; /* Expand the horizontal line to the left */
+}
+
+/* Specific styles for active category */
+#category-list .list-group-item.active-category {
+background: #000000;
+    border-top-left-radius: 100px; /* Rounded corners for each item */
+    border-bottom-left-radius: 5px; /* Rounded corners for each item */
+    border-top-right-radius: 5px; /* Rounded corners for each item */
+}
+
+
+#category-list .list-group-item::before {
+    content: '';
+    position: absolute;
+    border-top-left-radius: 100px; /* Rounded corners for each item */
+    border-bottom-left-radius: 5px; /* Rounded corners for each item */
+    border-top-right-radius: 5px; /* Rounded corners for each item */
+    bottom: 0; /* Start at the bottom */
+    right: 0; /* Align to the right */
+    width: 3px; /* Fixed width for the vertical line */
+    height: 0; /* Initial height (will animate) */
+    background: #ffffff; /* Change background color */
+    border-radius: 12px;
+    box-shadow: 0 0 10px #F8139C, /* Outer glow with a larger blur radius */
+            0 0 20px #F8139C, /* Additional larger glow for a stronger effect */
+            0 0 30px #F8139C; /* Even larger glow to enhance the effect */
+    transition: height 1s ease; /* Smooth transition for height */
+    z-index: 1;
+    
+}
+
+
+
+#category-list .list-group-item:hover::before {
+    height: 50%; /* Expand the line to the top */
+}
+
+#category-list .list-group-item::after {
+    content: '';
+    position: absolute;
+        border-top-left-radius: 100px; /* Rounded corners for each item */
+    border-bottom-left-radius: 5px; /* Rounded corners for each item */
+    border-top-right-radius: 5px; /* Rounded corners for each item */
+    bottom: 0; /* Stay at the bottom */
+    right: 0; /* Start from the right */
+    width: 0%; /* Initial width (will animate) */
+    height: 3px; /* Fixed height for the horizontal line */
+    background: #ffffff; /* Change background color */
+    border-radius: 12px;
+    box-shadow: 0 0 5px #F8139C, 0 0 10px #F8139C, 0 0 10px #F8139C; /* Glow effect */
+    transition: width 1s ease; /* Smooth transition for width */
+    z-index: 1;
+}
+
+#category-list .list-group-item:hover::after {
+    width: 50%; /* Expand the line to the left */
+}
+
+
+
+
+/* Style for the technology items */
+.tech-item {
+    text-align: center;
+    
+    margin-bottom: 20px;
+    opacity: 0;
+    transform: scale(0.8) translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out, box-shadow 0.4s ease;
+    position: relative;
+    /* font-family: 'Courier New', Courier, monospace; */
+}
+
+.tech-item.show {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+}
+
+.tech-icon {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 15px;
+    /* filter: drop-shadow(0 6px 12px rgba(255, 255, 255, 0.8)); */
+    transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.tech-icon:hover {
+    transform: scale(1.2) rotate(deg);
+    /* filter: drop-shadow(0 12px 24px rgb(255, 255, 255)); */
+}
+
+/* Layout for technology list */
+#technology-list {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: relative;
+}
+
+#technology-list::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* background: radial-gradient(circle, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)); */
+    opacity: 0.3;
+    z-index: -1;
+}
+
+/* Ensure categories and tech items fit within their columns */
+.col-md-3, .col-md-9 {
+    height: 100%;
+    position: relative;
+}
+
+@media (max-width: 768px) {
+    #category-list {
+        position: relative;
+        height: auto;
+        overflow: visible;
+        margin-bottom: 20px;
+    }
+    .col-md-3 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .col-md-9 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+
+/* END TECHNOLOGIES */
+
+
+/* ABOUT US SECTION */
+
+
+.about_section {
+  background-color: #7335b7;
+  color: #ffffff;
+  border-radius: 250px 0 250px 0;
+}
+
+.about_section .row {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.about_section .img-box {
+  position: relative;
+}
+
+.about_section .img-box img {
+  width: 100%;
+}
+
+.about_section .detail-box p {
+  margin-top: 15px;
+}
+
+.about_section .detail-box a {
+  display: inline-block;
+  padding: 10px 45px;
+  background-color: #f8842b;
+  color: #ffffff;
+  border-radius: 5px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  border: 1px solid #f8842b;
+  margin-top: 15px;
+}
+
+.about_section .detail-box a:hover {
+  color: #ffffff;
+  -webkit-transform: translateY(-3px);
+          transform: translateY(-3px);
+}
+
+
+/* END ABOUT US SECTION */

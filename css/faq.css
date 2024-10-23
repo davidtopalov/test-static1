@@ -1,0 +1,54 @@
+/* FAQ Section */
+.faq {
+  background: #000000;
+  color: #ffffff;
+  padding-top: 5vh;
+  padding-bottom: 5vh;
+}
+
+.faq .row {
+  justify-content: center; /* Centers the accordion */
+}
+
+.accordion {
+  --bs-accordion-active-bg: none;
+  --bs-accordion-active-color: #ffffff;
+  --bs-accordion-color: #ffffff;
+}
+
+.accordion-item {
+  padding: 2vh;
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+  border-radius: 5px;
+  /* border: 1px solid #ffffff; */
+  background: linear-gradient(135deg, #000000 80%, #e6128781);
+  -webkit-box-shadow: 0 5px 5px rgba(255, 255, 255, 0.3);
+  box-shadow: 0 5px 5x rgba(255, 255, 255, 0.3);
+}
+
+.accordion-button::after {
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='white'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>") !important;
+}
+
+.accordion-item:not(:first-of-type) {
+  border-top: 1px solid rgb(255, 255, 255);
+}
+
+.accordion-button {
+  background-color: transparent;
+  color: #ffffff;
+  font-size: 1.25rem;
+  font-weight: 500;
+  text-align: left;
+}
+
+.accordion-button:focus {
+  box-shadow: none;
+  border-color: rgba(255, 255, 255, 0);
+}
+
+.accordion-item:hover {
+  transform: translateX(10px);
+  transition: transform 0.3s ease; /* Smooth transition effect */
+}

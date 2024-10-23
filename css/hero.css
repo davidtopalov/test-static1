@@ -1,0 +1,166 @@
+/* Hero Section */
+#hero {
+  position: relative;
+  overflow: hidden;
+  height: 85vh; /* Ensures the hero section covers the full viewport height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  z-index: 0; /* Ensure background stays behind content */
+}
+
+/* Background Curve */
+#hero:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%; /* Makes sure the curve covers enough area */
+  height: 100%;
+  background: #000000;
+  /* background: linear-gradient(10deg, #000000 70%, #ffffff); */
+  /* clip-path: polygon(0 0, 100% 0, 100% 46%, 21% 100%, 0 80%); */
+  /* border-bottom-right-radius: 100%; */
+  /* border-bottom-left-radius: 100%; */
+  z-index: -1; /* Ensure the curve stays behind the content */
+}
+
+/* Floating Animation */
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-30px); /* Adjust the float distance as needed */
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Apply Floating Animation to the Image */
+.hero-image {
+  animation: float 4s ease-in-out infinite; /* Floating animation */
+  position: relative; /* Required for z-index to work */
+  z-index: 1; /* Ensure image is above everything */
+  /* filter: blur(70px); */
+  /* background-image: url("../assets/hero4.svg"); */
+}
+
+/* Container within Hero Section */
+.hero-container {
+  position: relative;
+  z-index: 2; /* Ensure text content is on top */
+  color: rgba(
+    255,
+    255,
+    255,
+    0
+  ); /* Ensure text color is white for readability */
+  padding: 5rem;
+}
+
+.hero-slogan {
+  color: #ffffff;
+}
+
+.hero-shadow {
+  box-shadow: -200px 300px 300px 200px #e6128775,
+    /* Pink (#e61288) with 50% opacity */ -150px 250px 200px 100px #ff7b009f,
+    /* Orange (#ff7a00) with 50% opacity */ -100px 200px 200px 100px #000000; /* Black with 50% opacity */
+}
+
+.hero-shadow2::before,
+.hero-shadow2::after {
+  content: "";
+  position: absolute;
+  bottom: -50%;
+  right: -30%;
+  /* transform: translate(-50%, -50%); */
+  border-radius: 50%;
+  z-index: -1; /* Ensure shadows are behind the image */
+}
+
+/* Pink Shadow */
+.hero-shadow2::before {
+  width: 100%; /* Increased spread */
+  height: 100%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 123, 0, 0.6),
+    transparent 50%
+  ); /* ff7b009f */
+  filter: blur(50px);
+}
+
+/* Orange Shadow */
+.hero-shadow2::after {
+  width: 100%; /* Increased spread */
+  height: 100%;
+  background: radial-gradient(
+    circle,
+    rgba(230, 18, 135, 0.5),
+    transparent 90%
+  ); /* e6128775 */
+  filter: blur(100px);
+}
+
+/* Style for the word with a rectangle background behind the text */
+.highlight-word {
+  position: relative;
+  z-index: 1;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #ffffff;
+}
+
+/* .highlight-word::before {
+  content: "";
+  position: absolute;
+  bottom: 0%;
+  right: -5%;
+  width: 110%;
+  height: 2rem;
+  border: none;
+  background: linear-gradient(45deg, #e6128775, #ff7b009f);
+  z-index: -1;
+  transform: translateY(-50%);
+  border-radius: 250px 0 250px;
+} */
+
+/* Responsive Text Alignment */
+.text-md-start {
+  text-align: left;
+}
+
+.hero-lead {
+  color: #ffffff;
+}
+
+/* Custom Button Styles */
+.btn-custom {
+  background: linear-gradient(
+    45deg,
+    #f8139c,
+    #ff7a00
+  ); /* Gradient background */
+  color: #ffffff; /* Text color */
+  border: none; /* Remove border */
+  border-radius: 30px; /* Rounded corners */
+  font-size: 16px; /* Adjust font size as needed */
+  padding: 15px 30px; /* Adjust padding as needed */
+  text-transform: uppercase; /* Uppercase text */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease,
+    transform 0.3s ease;
+}
+
+.btn-custom:hover {
+  color: #ffffff;
+  background: linear-gradient(
+    45deg,
+    #e61288,
+    #e66e00
+  ); /* Darker gradient shade for hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
+  transform: scaleX(1.05); /* Enlarge button width on hover */
+}

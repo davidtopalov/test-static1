@@ -1,0 +1,319 @@
+/* General Approach section styles */
+#approach {
+  background-color: #000000;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  position: relative;
+  overflow: hidden;
+  background-image: linear-gradient(
+      to bottom,
+      rgb(0, 0, 0) 15%,
+      rgba(255, 255, 255, 0) 70%,
+      rgba(255, 255, 255, 0) 30%,
+      rgb(0, 0, 0) 90%
+    ),
+    url("../assets/abstractsvg2.svg");
+  background-size: 100% 100%, 1000px 1000px;
+  background-position: center, -300px -300px;
+  background-repeat: no-repeat;
+}
+
+#approach .container {
+  z-index: 1;
+  max-width: 100%;
+  padding: 0;
+  color: #ffffff;
+}
+
+/* Dynamic content-based height adjustment */
+.approach-item {
+  margin-top: 5vh;
+  margin-bottom: 10vh;
+}
+
+/* Adjust card styling to grow with content */
+.card {
+  background-color: #000000;
+  position: relative;
+  margin: 0 5vw;
+  z-index: 1;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Background Card Styles */
+.background-card-1,
+.background-card-2 {
+  position: absolute;
+  width: 240px;
+  height: 120px;
+  border-radius: 5px;
+  z-index: 0;
+}
+
+.background-card-1 {
+  background: linear-gradient(15deg, #000000 30%, #e61287a8 40%, #000000 90%);
+  top: -2vh;
+  left: 4vw;
+}
+
+.background-card-2 {
+  background: linear-gradient(15deg, #000000 20%, #e66f0073 40%, #000000 90%);
+  bottom: -2vh;
+  right: 4vw;
+}
+
+/* Adjust card body */
+.card-body {
+  text-align: left;
+  position: relative;
+  z-index: 1;
+  color: #ffffff;
+}
+
+/* Updated Read More button styling */
+.approach-btn-read-more {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #ffffff;
+  background: #000000;
+  border-radius: 25px;
+  cursor: pointer;
+  overflow: hidden;
+  box-shadow: none;
+  outline: none;
+  border: none;
+}
+
+/* Hover effect with gradient */
+.approach-btn-read-more:hover {
+  border: 1px solid #ffffff;
+  color: #ffffff;
+}
+
+/* Style for the word with a rectangle background behind the text */
+.special-number {
+  position: relative;
+  z-index: 1;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #ffffff;
+  color: transparent;
+  font-family: "Poppins", sans-serif;
+  font-weight: 900;
+  font-size: 4rem;
+}
+
+/* Line 1: Bottom-left to bottom-right */
+.approach-item .outline-1 {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #e6128796; /* Neon color */
+  border-radius: 12px;
+  z-index: 1;
+  animation: line1 12s infinite; /* Total duration of the entire sequence */
+  animation-delay: 1s; /* Start this animation after 4s */
+  /* box-shadow: 0 0 5px #662AE4, 0 0 10px #662AE4, 0 0 10px #662AE4; */
+}
+
+@keyframes line1 {
+  0%,
+  100% {
+    width: 0;
+  }
+  33% {
+    width: 50%;
+  }
+}
+
+/* Line 2: Bottom-left to top-left */
+.approach-item .outline-2 {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 0;
+  width: 2px;
+  background-color: #662ae4; /* Neon color */
+  border-radius: 12px;
+  z-index: 1;
+  animation: line2 10s infinite; /* Total duration of the entire sequence */
+  animation-delay: 4s; /* Start this animation after 4s */
+  /* box-shadow: 0 0 5px #662AE4, 0 0 10px #662AE4, 0 0 10px #662AE4; */
+}
+
+@keyframes line2 {
+  0%,
+  100% {
+    height: 0;
+  }
+  33% {
+    height: 50%;
+  }
+}
+
+/* Line 3: Bottom-right to top-right */
+.approach-item .outline-3 {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 0;
+  width: 2px;
+  background-color: #662ae4; /* Neon color */
+  border-radius: 12px;
+  z-index: 1;
+  transition: height 2s ease;
+  animation: line3 6s infinite 3s; /* Added animation for the third line */
+  /* box-shadow: 0 0 5px #662AE4, 0 0 10px #662AE4, 0 0 10px #662AE4; */
+}
+
+@keyframes line3 {
+  0%,
+  100% {
+    height: 0;
+  }
+  33% {
+    height: 50%;
+  }
+}
+
+/* Line 4: Top-left to top-right */
+.approach-item .outline-4 {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 2px;
+  background-color: #662ae4; /* Neon color */
+  border-radius: 12px;
+  z-index: 1;
+  transition: width 2s ease;
+  animation: line4 10s infinite 1s; /* Added animation for the fourth line */
+  /* box-shadow: 0 0 5px #662AE4, 0 0 10px #662AE4, 0 0 10px #662AE4; */
+}
+
+@keyframes line4 {
+  0%,
+  100% {
+    width: 0;
+  }
+  33% {
+    width: 50%;
+  }
+}
+
+/* Line 5: Bottom-right to bottom-left */
+.approach-item .outline-5 {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 0;
+  height: 1px;
+  background-color: #ffffff00; /* Neon color */
+  border-radius: 12px;
+  z-index: 1;
+  transition: width 2s ease;
+  animation: line5 5s infinite 3s; /* Added animation for the first line */
+  box-shadow: 0 0 5px #662ae4, 0 0 10px #662ae4, 0 0 10px #662ae4; /* Glow effect */
+}
+
+@keyframes line5 {
+  0%,
+  100% {
+    width: 0;
+  }
+  33% {
+    width: 50%;
+  }
+}
+
+/*Line 6: Top-left to bottom-left */
+
+.approach-item .outline-6 {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 0;
+  width: 3px;
+  background-color: #ffffff00; /* Neon color */
+  border-radius: 12px;
+  z-index: 1;
+  transition: height 2s ease;
+  animation: line6 4s infinite 6s; /* Added animation for the second line */
+  box-shadow: 0 0 5px #662ae4, 0 0 10px #662ae4, 0 0 10px #662ae4; /* Glow effect */
+}
+
+@keyframes line6 {
+  0%,
+  100% {
+    height: 0;
+  }
+  33% {
+    height: 50%;
+  }
+}
+
+/* Line 7: Bottom-right to top-right */
+.approach-item .outline-7 {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 0;
+  width: 3px;
+  background-color: #ffffff00; /* Neon color */
+  border-radius: 12px;
+  z-index: 1;
+  transition: height 2s ease;
+  animation: line7 5s infinite 4s; /* Added animation for the second line */
+  box-shadow: 0 0 5px #662ae4, 0 0 10px #662ae4, 0 0 10px #662ae4; /* Glow effect */
+}
+
+@keyframes line7 {
+  0%,
+  100% {
+    height: 0;
+  }
+  33% {
+    height: 50%;
+  }
+}
+
+/* Hover effect animation (continuous) */
+@keyframes hover-effect {
+  0%,
+  100% {
+    transform: none;
+  }
+}
+
+/* SVG Image */
+.approach-svg {
+  position: absolute;
+  bottom: -15px;
+  right: -20px;
+  width: 120px;
+  height: 100px;
+  opacity: 0;
+  transform: scale(0.5);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 4;
+  pointer-events: none;
+}
+
+.item-container:hover .approach-svg {
+  opacity: 1;
+  transform: scale(1);
+}

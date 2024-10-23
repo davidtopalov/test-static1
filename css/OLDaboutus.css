@@ -1,0 +1,67 @@
+/* ABOUT US SECTION */
+
+.something_section {
+  position: relative;
+  padding: 5rem 0;
+  background: #ff0000;
+  color: #ffffff;
+  border-radius: 250px 0 0 0;
+  text-align: center;
+  overflow: hidden; /* Prevents overflow from causing horizontal scroll */
+}
+
+/* .something-image {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 70%;
+  height: 150%;
+  background: url("../assets/background-images/pexels-tara-winstead-83863582.jpg")
+    no-repeat center center;
+  background-size: cover;
+  z-index: 1;
+  clip-path: polygon(0 0, 100% 47%, 24% 100%);
+} */
+
+.something_section .something-container {
+  position: relative;
+  max-width: 100%;
+  z-index: 2;
+  margin: 0 auto; /* Centers the container */
+  padding-left: 1rem; /* Optional: Adds some space on smaller screens */
+  padding-right: 1rem; /* Optional: Adds some space on smaller screens */
+}
+
+.something_section .something-detail-box {
+  padding: 1rem 5rem; /* Reduced padding */
+  color: #ffffff;
+  position: relative;
+  z-index: 3; /* Ensures text and button appear on top of the background */
+}
+
+.btn-custom {
+  position: relative;
+  z-index: 3; /* Ensures text and button appear on top of the background */
+  background: linear-gradient(45deg, #f8139c, #ff7a00);
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  font-size: 16px;
+  padding: 15px 30px;
+  text-transform: uppercase;
+  transition: 0.3s ease;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.btn-large {
+  padding: 25px 80px; /* Increased padding for a bigger button */
+  font-size: 24px;
+  border-radius: 40px;
+}
+
+.btn-custom:hover {
+  background: linear-gradient(45deg, #e61288, #e66e00);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transform: translateY(-3px);
+}

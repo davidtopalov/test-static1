@@ -1,0 +1,287 @@
+/* General container layout */
+#technologies {
+  color: #fff;
+}
+
+.technology-container {
+  width: 80%;
+  display: flex;
+  flex-direction: column; /* Stack categories vertically */
+  align-items: center; /* Center each category horizontally */
+  margin: 0 auto; /* Center the container */
+  background: linear-gradient(245deg, #e61287a2, #00000000 50%);
+  padding: 5rem;
+  border-radius: 0 250px 0 0;
+}
+
+.tech-category {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Align items to the left */
+  width: 100%; /* Make sure the category takes the full width */
+  /* border-bottom: 1px solid #f01010; */
+}
+
+.tech-category::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px; /* Adjust height for thicker line */
+  background: linear-gradient(245deg, #ff7b00, #e61287);
+}
+
+.tech-category.no-border {
+  border-bottom: none;
+}
+
+.tech-category-name {
+  display: flex;
+  align-items: center; /* Center content vertically */
+}
+
+/* Flexbox for tech list alignment */
+.tech-list {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 20px;
+  text-align: center;
+  align-items: center; /* Align items to the center vertically */
+  padding: 10px; /* Add some padding */
+  height: 100%; /* Ensure it occupies full height of the parent */
+}
+
+/* Styling for each tech item */
+.tech-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100px; /* Adjust as needed */
+  margin: 0 10px; /* Remove vertical margins for consistency */
+  color: #fff;
+}
+
+/* Icon styling */
+.tech-icon {
+  width: 50px; /* Set desired width */
+  height: 50px; /* Set desired height */
+  background-size: cover;
+  background-position: center;
+}
+
+/* Icons project management and analysis technology */
+
+.icon-atlassian {
+  background-image: url("../assets/technologies/pm/atlassian.svg");
+}
+
+.icon-asana {
+  background-image: url("../assets/technologies/pm/asana.svg");
+}
+
+.icon-monday {
+  background-image: url("../assets/technologies/pm/monday.svg");
+}
+
+.icon-youtrack {
+  background-image: url("../assets/technologies/pm/jetbrainsyoutrack.svg");
+}
+
+.icon-diagramming {
+  background-image: url("../assets/technologies/pm/diagramming.svg");
+}
+
+.icon-powerbi {
+  background-image: url("../assets/technologies/pm/powerbi2.svg");
+}
+
+.icon-trello {
+  background-image: url("../assets/technologies/pm/trello.svg");
+}
+
+.icon-camunda {
+  background-image: url("../assets/technologies/pm/camunda.svg");
+}
+
+.icon-jotget {
+  background-image: url("../assets/technologies/pm/jotget.svg");
+}
+
+/* Icons frontend technology */
+
+.icon-react {
+  background-image: url("../assets/technologies/frontend/react.svg");
+}
+
+.icon-angular {
+  background-image: url("../assets/technologies/frontend/angular.svg");
+}
+
+.icon-typescript {
+  background-image: url("../assets/technologies/frontend/typescript.svg");
+}
+
+.icon-html {
+  background-image: url("../assets/technologies/frontend/html.svg");
+}
+
+.icon-css {
+  background-image: url("../assets/technologies/frontend/css.svg");
+}
+
+.icon-js {
+  background-image: url("../assets/technologies/frontend/javascript.svg");
+}
+
+/* Icons backend technology */
+
+.icon-php {
+  background-image: url("../assets/technologies/backend/php.svg");
+}
+
+.icon-nodejs {
+  background-image: url("../assets/technologies/backend/nodejs.svg");
+}
+
+.icon-ruby {
+  background-image: url("../assets/technologies/backend/ruby.svg");
+}
+
+.icon-python {
+  background-image: url("../assets/technologies/backend/python.svg");
+}
+
+.icon-golang {
+  background-image: url("../assets/technologies/backend/golang.svg");
+}
+
+/* Icons database technology */
+
+.icon-mysql {
+  background-image: url("../assets/technologies/databases/mysql.svg");
+}
+
+.icon-postgresql {
+  background-image: url("../assets/technologies/databases/postgresql.svg");
+}
+
+.icon-mariadb {
+  background-image: url("../assets/technologies/databases/mariadb.svg");
+}
+
+.icon-sqlite {
+  background-image: url("../assets/technologies/databases/sqlite.svg");
+}
+
+.icon-mongodb {
+  background-image: url("../assets/technologies/databases/mongodb.svg");
+}
+
+.icon-redis {
+  background-image: url("../assets/technologies/databases/redis.svg");
+}
+
+.icon-elasticsearch {
+  background-image: url("../assets/technologies/databases/elasticsearch.svg");
+}
+
+/* Icons devops technology */
+
+.icon-aws {
+  background-image: url("../assets/technologies/devops/aws.svg");
+}
+
+.icon-gcp {
+  background-image: url("../assets/technologies/devops/gcp.svg");
+}
+
+.icon-linux {
+  background-image: url("../assets/technologies/devops/linux.svg");
+}
+
+.icon-docker {
+  background-image: url("../assets/technologies/devops/docker.svg");
+}
+
+.icon-jenkins {
+  background-image: url("../assets/technologies/devops/jenkins.svg");
+}
+
+.icon-git {
+  background-image: url("../assets/technologies/devops/git.svg");
+}
+
+.icon-bitbucket {
+  background-image: url("../assets/technologies/devops/bitbucket.svg");
+}
+
+/* Icons aiml technology */
+
+.icon-python {
+  background-image: url("../assets/technologies/aiml/python.svg");
+}
+
+.icon-tensorflow {
+  background-image: url("../assets/technologies/aiml/tensorflow.svg");
+}
+
+.icon-pytorch {
+  background-image: url("../assets/technologies/aiml/pytorch.svg");
+}
+
+/* Icons testing technology */
+
+.icon-phpunit {
+  background-image: url("../assets/technologies/testing/phpunit.svg");
+}
+
+.icon-jest {
+  background-image: url("../assets/technologies/testing/jest.svg");
+}
+
+.icon-rspec {
+  background-image: url("../assets/technologies/testing/rspec.svg");
+}
+
+.icon-postman {
+  background-image: url("../assets/technologies/testing/postman.svg");
+}
+
+.icon-selenium {
+  background-image: url("../assets/technologies/testing/selenium.svg");
+}
+
+.icon-swagger {
+  background-image: url("../assets/technologies/testing/swagger.svg");
+}
+
+/* Icons uiux technology */
+
+.icon-figma {
+  background-image: url("../assets/technologies/uiux/figma.svg");
+}
+
+.icon-gimp {
+  background-image: url("../assets/technologies/uiux/gimp-w.svg");
+}
+
+.icon-inkscape {
+  background-image: url("../assets/technologies/uiux/inkscape-w.svg");
+}
+
+.icon-blender {
+  background-image: url("../assets/technologies/uiux/blender.svg");
+}
+
+.icon-zeplin {
+  background-image: url("../assets/technologies/uiux/zeplin.svg");
+}
+
+/* Text styling */
+.tech-name {
+  font-size: 14px;
+}
